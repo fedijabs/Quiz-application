@@ -36,7 +36,6 @@ In each language-specific folder, you’ll find a quiz program that:
   - JavaScript: Java 8 or higher.
   - C#: Developed with .NET Core 3.1 or .NET 5.0+.
 Each version is designed to be easy to run and requires minimal setup. If you’re familiar with one of these languages, feel free to jump right in and get started.
-If you’re new, don’t worry – instructions are provided for all the basics!
 
 # Installation and Setup(Prerequisites)
 Ensure you have the following installed:
@@ -46,9 +45,9 @@ Ensure you have the following installed:
   - .NET SDK (for C#): Download .NET SDK
 
 # Configuration
-Each language version may allow minor customization:
-Questions and Answers: You can modify the questions in each version's source code.
-Scoring Rules: Adjust the scoring logic within the code if needed.
+Each language version may allow minor customization, so feel free to make this project your own by customizing the following:
+  - Questions and Answers: You can modify the questions in each version's source code.
+  - Scoring Rules: Adjust the scoring logic within the code if needed.
 
 # License
 This project is open-source, so feel free to use, modify, and share it as you wish.
