@@ -21,9 +21,9 @@ The primary goals of the Console Quiz Application are:
   - Deliver a fun, straightforward project for anyone curious about console applications.
 
 # Features
-Scoring System: Tracks and displays the score after each quiz session.
-Simple User Interface: Console-based, easy to interact with.
-Cross-Language Implementation: Examples in Python, Java, and C#.
+  - Scoring System: Tracks and displays the score after each quiz session.
+  - Simple User Interface: Console-based, easy to interact with.
+  - Cross-Language Implementation: Examples in Python, Java, and C#.
 
 # What is Inside
 In each language-specific folder, you’ll find a quiz program that:
@@ -32,9 +32,9 @@ In each language-specific folder, you’ll find a quiz program that:
   - Gives you a final score summary when you finish.
 
 # Technologies Used: 
-Python: Python 3.x, using standard libraries.
-Java: Java 8 or higher.
-C#: .NET Core 3.1 or .NET 5.0+.
+  Python: Python 3.x, using standard libraries.
+  Java: Java 8 or higher.
+  C#: .NET Core 3.1 or .NET 5.0+.
 
 # Installation and Setup(Prerequisites)
 Ensure you have the following installed:
