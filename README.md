@@ -32,18 +32,23 @@ In each language-specific folder, you’ll find a quiz program that:
   - Gives you a final score summary when you finish.
 
 # Technologies Used: 
-  Python: Python 3.x, using standard libraries.
-  Java: Java 8 or higher.
-  C#: .NET Core 3.1 or .NET 5.0+.
+  - Python: Python 3.x, using standard libraries.
+  - JavaScript: Java 8 or higher.
+  - C#: Developed with .NET Core 3.1 or .NET 5.0+.
+Each version is designed to be easy to run and requires minimal setup. If you’re familiar with one of these languages, feel free to jump right in and get started.
+If you’re new, don’t worry – instructions are provided for all the basics!
 
 # Installation and Setup(Prerequisites)
 Ensure you have the following installed:
 
-  - Python 3.x: Python Download
-  - Java (JDK 8 or higher): Java Download
-  - .NET SDK (for C#): .NET SDK Download
+  - Python 3.x: Download Python
+  - Node.js (for JavaScript): Download Node.js
+  - .NET SDK (for C#): Download .NET SDK
 
 # Configuration
 Each language version may allow minor customization:
 Questions and Answers: You can modify the questions in each version's source code.
 Scoring Rules: Adjust the scoring logic within the code if needed.
+
+# License
+This project is open-source, so feel free to use, modify, and share it as you wish.
