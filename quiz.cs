@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Threading;
 
@@ -110,7 +110,6 @@ namespace ConsoleQuizApp
             foreach (Question question in quizQuestions)
             {
                 Console.WriteLine(question.Text);
-
                 foreach (var option in question.Options)
                 {
                     Console.WriteLine(option);
@@ -125,47 +124,50 @@ namespace ConsoleQuizApp
                 // Start the timer thread
                 Thread timer = new Thread(() =>
                 {
-                    for (int i = 20; i >= 0; i--)
+                    Thread.Sleep(20000); // Wait for 20 seconds
+                    if (!answered)
                     {
-                        if (answered) return; // Exit if answered
-                        Thread.Sleep(1000); // Wait for 1 second
+                        timeUp = true; // Mark time as up
+                        Console.WriteLine("\nTime's up!");
+                        Console.WriteLine($"The correct answer was {question.CorrectAnswer}.\n");
                     }
-
-                    timeUp = true; // Mark time as up
-                    Console.WriteLine("\nTime's up!");
-                    Console.WriteLine($"The correct answer was {question.CorrectAnswer}.\n");
                 });
                 timer.Start();
 
-                // Wait for user input or timeout
-                while (!timeUp && !answered)
+                // Main input loop
+                while (!answered && !timeUp)
                 {
-                    if (Console.KeyAvailable) // Check if a key is pressed
+                    if (Console.KeyAvailable) // Wait for user input
                     {
                         userAnswer = Console.ReadLine()?.ToUpper();
-                        answered = true;
-                        break;
-                    }
-                }
 
-                // Validate the answer if answered on time
-                if (answered && !timeUp)
-                {
-                    if (userAnswer != null && userAnswer.Length == 1 && userAnswer[0] >= 'A' && userAnswer[0] <= 'D')
-                    {
-                        if (userAnswer[0] == question.CorrectAnswer)
+                        if (userAnswer != null && userAnswer.Length == 1 && "ABCD".Contains(userAnswer))
                         {
-                            Console.WriteLine("\nCorrect!\n");
-                            score++;
+                            answered = true; // Valid input ends the loop
+                            if (userAnswer[0] == question.CorrectAnswer)
+                            {
+                                Console.WriteLine("\nCorrect!\n");
+                                score++;
+                            }
+                            else
+                            {
+                                Console.WriteLine($"\nWrong! The correct answer was {question.CorrectAnswer}.\n");
+                            }
                         }
                         else
                         {
-                            Console.WriteLine($"\nWrong! The correct answer was {question.CorrectAnswer}.\n");
+                            Console.WriteLine("\nInvalid input. Please enter a valid option (A-D): ");
                         }
                     }
+
+                    if (timeUp) break; // Break if timer signals timeout
                 }
 
-                timer.Join(); // Wait for the timer thread to finish
+                // Ensure timer thread is finished before moving to the next question
+                if (!answered && timeUp)
+                {
+                    timer.Join();
+                }
             }
 
             Console.WriteLine($"You completed the quiz! Your final score is: {score}/{quizQuestions.Count}");
